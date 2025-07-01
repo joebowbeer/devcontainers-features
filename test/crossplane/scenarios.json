@@ -1,0 +1,20 @@
+{
+    "stable_current": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "crossplane": {
+                "channel": "stable",
+                "version": "current"
+            }
+        }
+    },
+    "preview_current": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "crossplane": {
+                "channel": "preview",
+                "version": "current"
+            }
+        }
+    }
+}

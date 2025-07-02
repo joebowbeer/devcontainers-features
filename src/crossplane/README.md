@@ -7,7 +7,7 @@ Installs crossplane CLI, which provides utilities to make using Crossplane easie
 
 ```json
 "features": {
-    "ghcr.io/joebowbeer/devcontainers-features/crossplane:0": {}
+    "ghcr.io/joebowbeer/devcontainers-features/crossplane:1": {}
 }
 ```
 

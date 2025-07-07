@@ -20,8 +20,8 @@ check_packages curl ca-certificates
 
 echo "Activating feature 'crossplane'"
 
-XP_VERSION=${VERSION:-"current"}
-XP_CHANNEL=${VERSION:-"stable"}
+export XP_VERSION=${VERSION:-"current"}
+export XP_CHANNEL=${CHANNEL:-"stable"}
 
 curl -sSL "https://raw.githubusercontent.com/crossplane/crossplane/main/install.sh" | sh
 

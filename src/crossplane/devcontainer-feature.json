@@ -1,6 +1,6 @@
 {
     "id": "crossplane",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "name": "crossplane",
     "description": "Installs crossplane CLI, which provides utilities to make using Crossplane easier.",
     "documentationURL": "https://github.com/joebowbeer/devcontainers-features/tree/main/src/crossplane",

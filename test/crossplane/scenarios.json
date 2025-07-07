@@ -16,5 +16,14 @@
                 "version": "current"
             }
         }
+    },
+    "master_v2": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "crossplane": {
+                "channel": "master",
+                "version": "v2.0.0-rc.0.144.g0ca7bac77"
+            }
+        }
     }
 }

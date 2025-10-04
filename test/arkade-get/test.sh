@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # This test file will be executed against an auto-generated devcontainer.json that
-# includes the 'crossplane' Feature with no options.
+# includes the 'arkade-get' Feature with no options.
 #
 # For more information, see: https://github.com/devcontainers/cli/blob/main/docs/features/test.md
 #
@@ -9,7 +9,7 @@
 # {
 #    "image": "<..some-base-image...>",
 #    "features": {
-#      "crossplane": {}
+#      "arkade-get": {}
 #    },
 #    "remoteUser": "root"
 # }
@@ -23,7 +23,7 @@
 # This test can be run with the following command:
 #
 #    devcontainer features test \ 
-#                   --features crossplane \
+#                   --features arkade-get \
 #                   --remote-user root \
 #                   --skip-scenarios   \
 #                   --base-image mcr.microsoft.com/devcontainers/base:ubuntu \
@@ -39,7 +39,7 @@ source dev-container-features-test-lib
 # Feature-specific tests
 # The 'check' command comes from the dev-container-features-test-lib. Syntax is...
 # check <LABEL> <cmd> [args...]
-check "execute command" bash -c "crossplane -h | grep 'Usage: crossplane'"
+check "execute command" bash -c "arkade --help | grep 'Usage: arkade'"
 
 # Report results
 # If any of the checks above exited with a non-zero exit code, the test will fail.

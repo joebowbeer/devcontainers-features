@@ -1,0 +1,21 @@
+{
+    "id": "arkade-get",
+    "version": "0.0.1",
+    "name": "arkade-get",
+    "description": "Installs arkade and arkade installs the other specified CLIs.",
+    "documentationURL": "https://github.com/joebowbeer/devcontainers-features/tree/main/src/arkade-get",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "github.copilot.chat.codeGeneration.instructions": [
+                    {
+                        "text": "This dev container includes arkade pre-installed and available on the `PATH`."
+                    }
+                ]
+            }
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}

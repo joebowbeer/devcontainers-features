@@ -20,4 +20,4 @@ check_packages curl jq
 
 echo "Activating feature 'arkade-get'"
 
-# curl -sSL "https://raw.githubusercontent.com/alexellis/arkade/refs/heads/master/get.sh" | sh
+curl -sSL "https://raw.githubusercontent.com/alexellis/arkade/refs/heads/master/get.sh" | sh

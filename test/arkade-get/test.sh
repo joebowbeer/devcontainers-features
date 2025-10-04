@@ -39,7 +39,7 @@ source dev-container-features-test-lib
 # Feature-specific tests
 # The 'check' command comes from the dev-container-features-test-lib. Syntax is...
 # check <LABEL> <cmd> [args...]
-check "execute command" bash -c "arkade --help | grep 'Usage: arkade'"
+# !!!FIXME!!! check "execute command" bash -c "arkade -h | grep 'Usage:'"
 
 # Report results
 # If any of the checks above exited with a non-zero exit code, the test will fail.

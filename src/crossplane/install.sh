@@ -16,7 +16,7 @@ check_packages() {
     fi
 }
 
-check_packages curl ca-certificates
+check_packages ca-certificates curl
 
 echo "Activating feature 'crossplane'"
 

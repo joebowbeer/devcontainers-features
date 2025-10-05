@@ -10,7 +10,7 @@ source dev-container-features-test-lib
 
 # Feature-specific tests
 # The 'check' command comes from the dev-container-features-test-lib.
-check "execute command" bash -c "arkade -h | grep 'Usage:'"
+check "execute command" bash -c "arkade -h | grep -zoP 'Usage:\n  arkade'"
 
 # Report results
 # If any of the checks above exited with a non-zero exit code, the test will fail.

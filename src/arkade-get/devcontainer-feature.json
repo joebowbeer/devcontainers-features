@@ -1,6 +1,6 @@
 {
   "id": "arkade-get",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "arkade-get",
   "description": "Installs arkade and then arkade installs the other specified CLIs.",
   "documentationURL": "https://github.com/joebowbeer/devcontainers-features/tree/main/src/arkade-get",

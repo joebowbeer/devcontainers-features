@@ -1,28 +1,888 @@
 {
-    "id": "arkade-get",
-    "version": "0.0.2",
-    "name": "arkade-get",
-    "description": "Installs arkade and then arkade installs the other specified CLIs.",
-    "documentationURL": "https://github.com/joebowbeer/devcontainers-features/tree/main/src/arkade-get",
-    "options": {
-        "kustomize": {
-            "type": "string",
-            "default": "",
-            "description": "kustomize version"
-        }
+  "id": "arkade-get",
+  "version": "0.0.3",
+  "name": "arkade-get",
+  "description": "Installs arkade and then arkade installs the other specified CLIs.",
+  "documentationURL": "https://github.com/joebowbeer/devcontainers-features/tree/main/src/arkade-get",
+  "options": {
+    "actions-usage": {
+      "type": "string",
+      "default": "",
+      "description": "actions-usage version"
     },
-    "customizations": {
-        "vscode": {
-            "settings": {
-                "github.copilot.chat.codeGeneration.instructions": [
-                    {
-                        "text": "This dev container includes arkade pre-installed and available on the `PATH`."
-                    }
-                ]
-            }
-        }
+    "actuated-cli": {
+      "type": "string",
+      "default": "",
+      "description": "actuated-cli version"
     },
-    "installsAfter": [
-        "ghcr.io/devcontainers/features/common-utils"
-    ]
+    "alloy": {
+      "type": "string",
+      "default": "",
+      "description": "alloy version"
+    },
+    "argocd": {
+      "type": "string",
+      "default": "",
+      "description": "argocd version"
+    },
+    "argocd-autopilot": {
+      "type": "string",
+      "default": "",
+      "description": "argocd-autopilot version"
+    },
+    "atuin": {
+      "type": "string",
+      "default": "",
+      "description": "atuin version"
+    },
+    "autok3s": {
+      "type": "string",
+      "default": "",
+      "description": "autok3s version"
+    },
+    "buildx": {
+      "type": "string",
+      "default": "",
+      "description": "buildx version"
+    },
+    "bun": {
+      "type": "string",
+      "default": "",
+      "description": "bun version"
+    },
+    "butane": {
+      "type": "string",
+      "default": "",
+      "description": "butane version"
+    },
+    "caddy": {
+      "type": "string",
+      "default": "",
+      "description": "caddy version"
+    },
+    "ch-remote": {
+      "type": "string",
+      "default": "",
+      "description": "ch-remote version"
+    },
+    "cilium": {
+      "type": "string",
+      "default": "",
+      "description": "cilium version"
+    },
+    "civo": {
+      "type": "string",
+      "default": "",
+      "description": "civo version"
+    },
+    "cloud-hypervisor": {
+      "type": "string",
+      "default": "",
+      "description": "cloud-hypervisor version"
+    },
+    "clusterawsadm": {
+      "type": "string",
+      "default": "",
+      "description": "clusterawsadm version"
+    },
+    "clusterctl": {
+      "type": "string",
+      "default": "",
+      "description": "clusterctl version"
+    },
+    "cmctl": {
+      "type": "string",
+      "default": "",
+      "description": "cmctl version"
+    },
+    "conftest": {
+      "type": "string",
+      "default": "",
+      "description": "conftest version"
+    },
+    "consul": {
+      "type": "string",
+      "default": "",
+      "description": "consul version"
+    },
+    "copa": {
+      "type": "string",
+      "default": "",
+      "description": "copa version"
+    },
+    "cosign": {
+      "type": "string",
+      "default": "",
+      "description": "cosign version"
+    },
+    "cr": {
+      "type": "string",
+      "default": "",
+      "description": "cr version"
+    },
+    "crane": {
+      "type": "string",
+      "default": "",
+      "description": "crane version"
+    },
+    "croc": {
+      "type": "string",
+      "default": "",
+      "description": "croc version"
+    },
+    "crossplane": {
+      "type": "string",
+      "default": "",
+      "description": "crossplane version"
+    },
+    "dagger": {
+      "type": "string",
+      "default": "",
+      "description": "dagger version"
+    },
+    "devpod": {
+      "type": "string",
+      "default": "",
+      "description": "devpod version"
+    },
+    "devspace": {
+      "type": "string",
+      "default": "",
+      "description": "devspace version"
+    },
+    "dive": {
+      "type": "string",
+      "default": "",
+      "description": "dive version"
+    },
+    "docker-compose": {
+      "type": "string",
+      "default": "",
+      "description": "docker-compose version"
+    },
+    "doctl": {
+      "type": "string",
+      "default": "",
+      "description": "doctl version"
+    },
+    "dotenv-linter": {
+      "type": "string",
+      "default": "",
+      "description": "dotenv-linter version"
+    },
+    "duplik8s": {
+      "type": "string",
+      "default": "",
+      "description": "duplik8s version"
+    },
+    "eks-node-viewer": {
+      "type": "string",
+      "default": "",
+      "description": "eks-node-viewer version"
+    },
+    "eksctl": {
+      "type": "string",
+      "default": "",
+      "description": "eksctl version"
+    },
+    "eksctl-anywhere": {
+      "type": "string",
+      "default": "",
+      "description": "eksctl-anywhere version"
+    },
+    "etcd": {
+      "type": "string",
+      "default": "",
+      "description": "etcd version"
+    },
+    "faas-cli": {
+      "type": "string",
+      "default": "",
+      "description": "faas-cli version"
+    },
+    "faasd": {
+      "type": "string",
+      "default": "",
+      "description": "faasd version"
+    },
+    "firectl": {
+      "type": "string",
+      "default": "",
+      "description": "firectl version"
+    },
+    "flux": {
+      "type": "string",
+      "default": "",
+      "description": "flux version"
+    },
+    "flyctl": {
+      "type": "string",
+      "default": "",
+      "description": "flyctl version"
+    },
+    "fstail": {
+      "type": "string",
+      "default": "",
+      "description": "fstail version"
+    },
+    "fzf": {
+      "type": "string",
+      "default": "",
+      "description": "fzf version"
+    },
+    "gh": {
+      "type": "string",
+      "default": "",
+      "description": "gh version"
+    },
+    "gha-bump": {
+      "type": "string",
+      "default": "",
+      "description": "gha-bump version"
+    },
+    "git-who": {
+      "type": "string",
+      "default": "",
+      "description": "git-who version"
+    },
+    "glab": {
+      "type": "string",
+      "default": "",
+      "description": "glab version"
+    },
+    "glow": {
+      "type": "string",
+      "default": "",
+      "description": "glow version"
+    },
+    "golangci-lint": {
+      "type": "string",
+      "default": "",
+      "description": "golangci-lint version"
+    },
+    "gomplate": {
+      "type": "string",
+      "default": "",
+      "description": "gomplate version"
+    },
+    "goreleaser": {
+      "type": "string",
+      "default": "",
+      "description": "goreleaser version"
+    },
+    "gptscript": {
+      "type": "string",
+      "default": "",
+      "description": "gptscript version"
+    },
+    "grafana-agent": {
+      "type": "string",
+      "default": "",
+      "description": "grafana-agent version"
+    },
+    "grype": {
+      "type": "string",
+      "default": "",
+      "description": "grype version"
+    },
+    "hadolint": {
+      "type": "string",
+      "default": "",
+      "description": "hadolint version"
+    },
+    "helm": {
+      "type": "string",
+      "default": "",
+      "description": "helm version"
+    },
+    "helmfile": {
+      "type": "string",
+      "default": "",
+      "description": "helmfile version"
+    },
+    "hey": {
+      "type": "string",
+      "default": "",
+      "description": "hey version"
+    },
+    "hostctl": {
+      "type": "string",
+      "default": "",
+      "description": "hostctl version"
+    },
+    "hubble": {
+      "type": "string",
+      "default": "",
+      "description": "hubble version"
+    },
+    "hugo": {
+      "type": "string",
+      "default": "",
+      "description": "hugo version"
+    },
+    "influx": {
+      "type": "string",
+      "default": "",
+      "description": "influx version"
+    },
+    "inlets-pro": {
+      "type": "string",
+      "default": "",
+      "description": "inlets-pro version"
+    },
+    "inletsctl": {
+      "type": "string",
+      "default": "",
+      "description": "inletsctl version"
+    },
+    "istioctl": {
+      "type": "string",
+      "default": "",
+      "description": "istioctl version"
+    },
+    "jq": {
+      "type": "string",
+      "default": "",
+      "description": "jq version"
+    },
+    "just": {
+      "type": "string",
+      "default": "",
+      "description": "just version"
+    },
+    "k0s": {
+      "type": "string",
+      "default": "",
+      "description": "k0s version"
+    },
+    "k0sctl": {
+      "type": "string",
+      "default": "",
+      "description": "k0sctl version"
+    },
+    "k3d": {
+      "type": "string",
+      "default": "",
+      "description": "k3d version"
+    },
+    "k3s": {
+      "type": "string",
+      "default": "",
+      "description": "k3s version"
+    },
+    "k3sup": {
+      "type": "string",
+      "default": "",
+      "description": "k3sup version"
+    },
+    "k9s": {
+      "type": "string",
+      "default": "",
+      "description": "k9s version"
+    },
+    "kail": {
+      "type": "string",
+      "default": "",
+      "description": "kail version"
+    },
+    "keploy": {
+      "type": "string",
+      "default": "",
+      "description": "keploy version"
+    },
+    "kgctl": {
+      "type": "string",
+      "default": "",
+      "description": "kgctl version"
+    },
+    "kim": {
+      "type": "string",
+      "default": "",
+      "description": "kim version"
+    },
+    "kind": {
+      "type": "string",
+      "default": "",
+      "description": "kind version"
+    },
+    "kops": {
+      "type": "string",
+      "default": "",
+      "description": "kops version"
+    },
+    "krew": {
+      "type": "string",
+      "default": "",
+      "description": "krew version"
+    },
+    "ktop": {
+      "type": "string",
+      "default": "",
+      "description": "ktop version"
+    },
+    "kube-bench": {
+      "type": "string",
+      "default": "",
+      "description": "kube-bench version"
+    },
+    "kube-burner": {
+      "type": "string",
+      "default": "",
+      "description": "kube-burner version"
+    },
+    "kube-linter": {
+      "type": "string",
+      "default": "",
+      "description": "kube-linter version"
+    },
+    "kube-score": {
+      "type": "string",
+      "default": "",
+      "description": "kube-score version"
+    },
+    "kubebuilder": {
+      "type": "string",
+      "default": "",
+      "description": "kubebuilder version"
+    },
+    "kubecm": {
+      "type": "string",
+      "default": "",
+      "description": "kubecm version"
+    },
+    "kubecolor": {
+      "type": "string",
+      "default": "",
+      "description": "kubecolor version"
+    },
+    "kubeconform": {
+      "type": "string",
+      "default": "",
+      "description": "kubeconform version"
+    },
+    "kubectl": {
+      "type": "string",
+      "default": "",
+      "description": "kubectl version"
+    },
+    "kubectx": {
+      "type": "string",
+      "default": "",
+      "description": "kubectx version"
+    },
+    "kubens": {
+      "type": "string",
+      "default": "",
+      "description": "kubens version"
+    },
+    "kubescape": {
+      "type": "string",
+      "default": "",
+      "description": "kubescape version"
+    },
+    "kubeseal": {
+      "type": "string",
+      "default": "",
+      "description": "kubeseal version"
+    },
+    "kubetail": {
+      "type": "string",
+      "default": "",
+      "description": "kubetail version"
+    },
+    "kubetrim": {
+      "type": "string",
+      "default": "",
+      "description": "kubetrim version"
+    },
+    "kubeval": {
+      "type": "string",
+      "default": "",
+      "description": "kubeval version"
+    },
+    "kubie": {
+      "type": "string",
+      "default": "",
+      "description": "kubie version"
+    },
+    "kumactl": {
+      "type": "string",
+      "default": "",
+      "description": "kumactl version"
+    },
+    "kustomize": {
+      "type": "string",
+      "default": "",
+      "description": "kustomize version"
+    },
+    "kwok": {
+      "type": "string",
+      "default": "",
+      "description": "kwok version"
+    },
+    "kwokctl": {
+      "type": "string",
+      "default": "",
+      "description": "kwokctl version"
+    },
+    "kyverno": {
+      "type": "string",
+      "default": "",
+      "description": "kyverno version"
+    },
+    "labctl": {
+      "type": "string",
+      "default": "",
+      "description": "labctl version"
+    },
+    "lazydocker": {
+      "type": "string",
+      "default": "",
+      "description": "lazydocker version"
+    },
+    "lazygit": {
+      "type": "string",
+      "default": "",
+      "description": "lazygit version"
+    },
+    "linkerd2": {
+      "type": "string",
+      "default": "",
+      "description": "linkerd2 version"
+    },
+    "logcli": {
+      "type": "string",
+      "default": "",
+      "description": "logcli version"
+    },
+    "mc": {
+      "type": "string",
+      "default": "",
+      "description": "mc version"
+    },
+    "metal": {
+      "type": "string",
+      "default": "",
+      "description": "metal version"
+    },
+    "minikube": {
+      "type": "string",
+      "default": "",
+      "description": "minikube version"
+    },
+    "mixctl": {
+      "type": "string",
+      "default": "",
+      "description": "mixctl version"
+    },
+    "mkcert": {
+      "type": "string",
+      "default": "",
+      "description": "mkcert version"
+    },
+    "nats": {
+      "type": "string",
+      "default": "",
+      "description": "nats version"
+    },
+    "nats-server": {
+      "type": "string",
+      "default": "",
+      "description": "nats-server version"
+    },
+    "nerdctl": {
+      "type": "string",
+      "default": "",
+      "description": "nerdctl version"
+    },
+    "node_exporter": {
+      "type": "string",
+      "default": "",
+      "description": "node_exporter version"
+    },
+    "nova": {
+      "type": "string",
+      "default": "",
+      "description": "nova version"
+    },
+    "oc": {
+      "type": "string",
+      "default": "",
+      "description": "oc version"
+    },
+    "oh-my-posh": {
+      "type": "string",
+      "default": "",
+      "description": "oh-my-posh version"
+    },
+    "op": {
+      "type": "string",
+      "default": "",
+      "description": "op version"
+    },
+    "opa": {
+      "type": "string",
+      "default": "",
+      "description": "opa version"
+    },
+    "opencode": {
+      "type": "string",
+      "default": "",
+      "description": "opencode version"
+    },
+    "openshift-install": {
+      "type": "string",
+      "default": "",
+      "description": "openshift-install version"
+    },
+    "operator-sdk": {
+      "type": "string",
+      "default": "",
+      "description": "operator-sdk version"
+    },
+    "osm": {
+      "type": "string",
+      "default": "",
+      "description": "osm version"
+    },
+    "pack": {
+      "type": "string",
+      "default": "",
+      "description": "pack version"
+    },
+    "packer": {
+      "type": "string",
+      "default": "",
+      "description": "packer version"
+    },
+    "polaris": {
+      "type": "string",
+      "default": "",
+      "description": "polaris version"
+    },
+    "popeye": {
+      "type": "string",
+      "default": "",
+      "description": "popeye version"
+    },
+    "porter": {
+      "type": "string",
+      "default": "",
+      "description": "porter version"
+    },
+    "promtool": {
+      "type": "string",
+      "default": "",
+      "description": "promtool version"
+    },
+    "pulumi": {
+      "type": "string",
+      "default": "",
+      "description": "pulumi version"
+    },
+    "rclone": {
+      "type": "string",
+      "default": "",
+      "description": "rclone version"
+    },
+    "regctl": {
+      "type": "string",
+      "default": "",
+      "description": "regctl version"
+    },
+    "rekor-cli": {
+      "type": "string",
+      "default": "",
+      "description": "rekor-cli version"
+    },
+    "replicated": {
+      "type": "string",
+      "default": "",
+      "description": "replicated version"
+    },
+    "rg": {
+      "type": "string",
+      "default": "",
+      "description": "rg version"
+    },
+    "rosa": {
+      "type": "string",
+      "default": "",
+      "description": "rosa version"
+    },
+    "rpk": {
+      "type": "string",
+      "default": "",
+      "description": "rpk version"
+    },
+    "run-job": {
+      "type": "string",
+      "default": "",
+      "description": "run-job version"
+    },
+    "scaleway-cli": {
+      "type": "string",
+      "default": "",
+      "description": "scaleway-cli version"
+    },
+    "seaweedfs": {
+      "type": "string",
+      "default": "",
+      "description": "seaweedfs version"
+    },
+    "skupper": {
+      "type": "string",
+      "default": "",
+      "description": "skupper version"
+    },
+    "snowmachine": {
+      "type": "string",
+      "default": "",
+      "description": "snowmachine version"
+    },
+    "sops": {
+      "type": "string",
+      "default": "",
+      "description": "sops version"
+    },
+    "ssync": {
+      "type": "string",
+      "default": "",
+      "description": "ssync version"
+    },
+    "stern": {
+      "type": "string",
+      "default": "",
+      "description": "stern version"
+    },
+    "syft": {
+      "type": "string",
+      "default": "",
+      "description": "syft version"
+    },
+    "talosctl": {
+      "type": "string",
+      "default": "",
+      "description": "talosctl version"
+    },
+    "task": {
+      "type": "string",
+      "default": "",
+      "description": "task version"
+    },
+    "temporal": {
+      "type": "string",
+      "default": "",
+      "description": "temporal version"
+    },
+    "terraform": {
+      "type": "string",
+      "default": "",
+      "description": "terraform version"
+    },
+    "terraform-docs": {
+      "type": "string",
+      "default": "",
+      "description": "terraform-docs version"
+    },
+    "terragrunt": {
+      "type": "string",
+      "default": "",
+      "description": "terragrunt version"
+    },
+    "terrascan": {
+      "type": "string",
+      "default": "",
+      "description": "terrascan version"
+    },
+    "tflint": {
+      "type": "string",
+      "default": "",
+      "description": "tflint version"
+    },
+    "tfsec": {
+      "type": "string",
+      "default": "",
+      "description": "tfsec version"
+    },
+    "tilt": {
+      "type": "string",
+      "default": "",
+      "description": "tilt version"
+    },
+    "timoni": {
+      "type": "string",
+      "default": "",
+      "description": "timoni version"
+    },
+    "tkn": {
+      "type": "string",
+      "default": "",
+      "description": "tkn version"
+    },
+    "tofu": {
+      "type": "string",
+      "default": "",
+      "description": "tofu version"
+    },
+    "trivy": {
+      "type": "string",
+      "default": "",
+      "description": "trivy version"
+    },
+    "vagrant": {
+      "type": "string",
+      "default": "",
+      "description": "vagrant version"
+    },
+    "vault": {
+      "type": "string",
+      "default": "",
+      "description": "vault version"
+    },
+    "vcluster": {
+      "type": "string",
+      "default": "",
+      "description": "vcluster version"
+    },
+    "vhs": {
+      "type": "string",
+      "default": "",
+      "description": "vhs version"
+    },
+    "viddy": {
+      "type": "string",
+      "default": "",
+      "description": "viddy version"
+    },
+    "waypoint": {
+      "type": "string",
+      "default": "",
+      "description": "waypoint version"
+    },
+    "yq": {
+      "type": "string",
+      "default": "",
+      "description": "yq version"
+    },
+    "yt-dlp": {
+      "type": "string",
+      "default": "",
+      "description": "yt-dlp version"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "github.copilot.chat.codeGeneration.instructions": [
+          {
+            "text": "This dev container includes arkade pre-installed and available on the `PATH`."
+          }
+        ]
+      }
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/common-utils"
+  ]
 }

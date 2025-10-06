@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # This test file will be executed against one of the scenarios devcontainer.json test that
-# includes the 'arkade-get' feature with the 'kustomize' option.
+# includes the 'arkade-get' feature with the 'kustomize' and 'tofu' options.
 
 set -e
 
@@ -12,6 +12,7 @@ source dev-container-features-test-lib
 # The 'check' command comes from the dev-container-features-test-lib.
 check "execute command" bash -c "arkade -h | grep -zoP 'Usage:\n  arkade'"
 check "execute command" bash -c "kustomize version | grep 'v5'"
+check "execute command" bash -c "tofu version | grep 'OpenTofu v1'"
 
 # Report results
 # If any of the checks above exited with a non-zero exit code, the test will fail.

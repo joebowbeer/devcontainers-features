@@ -1,4 +1,10 @@
 {
+    "arkade-get": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "arkade-get": {}
+        }
+    },
     "crossplane": {
         "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "features": {

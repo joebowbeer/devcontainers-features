@@ -1,8 +1,10 @@
 {
-    "arkade": {
+    "kustomize": {
         "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "features": {
-            "arkade-get": {}
+            "arkade-get": {
+                "kustomize": "latest"
+            }
         }
     }
 }

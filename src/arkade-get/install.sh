@@ -1,5 +1,5 @@
 #!/bin/bash
-set -ex
+set -e
 
 apt_get_update() {
     if [ "$(find /var/lib/apt/lists/* | wc -l)" = "0" ]; then
@@ -46,5 +46,6 @@ done <<< "$(arkade get -o list)"
 if [ -n "$tools" ]; then
     echo "Installing via arkade: $tools"
     echo "$tools" | xargs arkade get --progress=false
+    chmod +x ~/.arkade/bin/*
     mv ~/.arkade/bin/* /usr/local/bin/
 fi

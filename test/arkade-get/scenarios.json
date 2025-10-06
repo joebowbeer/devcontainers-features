@@ -1,9 +1,10 @@
 {
-    "kustomize": {
+    "kustomize_tofu": {
         "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "features": {
             "arkade-get": {
-                "kustomize": "latest"
+                "kustomize": "v5.7.1",
+                "tofu": "latest"
             }
         }
     }

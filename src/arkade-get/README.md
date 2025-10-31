@@ -44,6 +44,7 @@ Installs arkade and then arkade installs the other specified CLIs.
 | dagger | dagger version | string | - |
 | devpod | devpod version | string | - |
 | devspace | devspace version | string | - |
+| discord-updater | discord-updater version | string | - |
 | dive | dive version | string | - |
 | docker-compose | docker-compose version | string | - |
 | doctl | doctl version | string | - |

@@ -16,13 +16,17 @@ check_packages() {
     fi
 }
 
-check_packages ca-certificates curl
+check_packages ca-certificates curl jq
 
 echo "Activating feature 'arkade-get'"
 
-curl -sSL "https://raw.githubusercontent.com/alexellis/arkade/refs/heads/master/get.sh" | sh
+# Install the version of arkade that was used to generate the feature options
 
-# Parse CLI tool selections
+_ARKADE_TAG="${_ARKADE_TAG:-"0.11.54"}"
+
+curl -sSL "https://raw.githubusercontent.com/alexellis/arkade/refs/tags/$_ARKADE_TAG/get.sh" | sh
+
+# Match the feature options to the environment variables specifying the selected tool versions
 
 tools=""
 while IFS= read -r tool; do
@@ -41,7 +45,7 @@ while IFS= read -r tool; do
     elif [ -n "$version" ]; then
         tools="$tools $tool@$version"
     fi
-done <<< "$(arkade get -o list)"
+done <<< "$(jq -r '.options | keys[]' devcontainer-feature.json)"
 
 if [ -n "$tools" ]; then
     echo "Installing via arkade: $tools"

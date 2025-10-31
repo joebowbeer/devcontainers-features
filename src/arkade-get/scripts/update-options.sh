@@ -5,9 +5,19 @@ FEATURE_JSON="$(cd "$(dirname "$0")/.." && pwd)/devcontainer-feature.json"
 
 newoptions=$(mktemp)
 
+# Install a specific version of arkade to list the available tools.
+# The install script will install this same version.
+
+_ARKADE_TAG="${_ARKADE_TAG:-"0.11.54"}"
+
+arkade get arkade@"$_ARKADE_TAG" --progress=false >/dev/null 2>&1 || {
+    echo "Failed to install arkade version $_ARKADE_TAG"
+    exit 1
+}
+
 # Get the list of tools from arkade and build a new options object:
 # { "tool": {"type":"string","default":"","description":"tool version"}, ... }
-arkade get -o list \
+~/.arkade/bin/arkade get -o list \
   | jq -R -s '
       split("\n")[:-1] 
       | map(select(length > 0) | select(. != "arkade")) as $tools 

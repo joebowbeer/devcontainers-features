@@ -1,6 +1,6 @@
 {
   "id": "arkade-get",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "name": "arkade-get",
   "description": "Installs arkade and then arkade installs the other specified CLIs.",
   "documentationURL": "https://github.com/joebowbeer/devcontainers-features/tree/main/src/arkade-get",
@@ -149,6 +149,11 @@
       "type": "string",
       "default": "",
       "description": "devspace version"
+    },
+    "discord-updater": {
+      "type": "string",
+      "default": "",
+      "description": "discord-updater version"
     },
     "dive": {
       "type": "string",

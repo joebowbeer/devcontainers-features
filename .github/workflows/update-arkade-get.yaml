@@ -1,4 +1,4 @@
-name: "Update arkade-get feature from latest arkade release"
+name: "Update arkade-get options from latest release"
 on:
   workflow_dispatch:
 
@@ -20,6 +20,10 @@ jobs:
 
       - name: Update arkade-get install.sh with latest arkade tag
         run: sed -i "s/_ARKADE_TAG=\".*\"/_ARKADE_TAG=\"${{ steps.get_arkade_tag.outputs.arkade_tag }}\"/" src/arkade-get/install.sh
+
+      - uses: allexellis/arkade-get@master
+        with:
+          arkade: ${{ steps.get_arkade_tag.outputs.arkade_tag }}
 
       - name: Update arkade-get options from latest release
         run: bash src/arkade-get/scripts/update-options.sh

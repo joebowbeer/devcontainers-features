@@ -1,6 +1,6 @@
 {
   "id": "arkade-get",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "name": "arkade-get",
   "description": "Installs arkade and then arkade installs the other specified CLIs.",
   "documentationURL": "https://github.com/joebowbeer/devcontainers-features/tree/main/src/arkade-get",
@@ -174,6 +174,11 @@
       "type": "string",
       "default": "",
       "description": "dotenv-linter version"
+    },
+    "dufs": {
+      "type": "string",
+      "default": "",
+      "description": "dufs version"
     },
     "duplik8s": {
       "type": "string",
@@ -410,6 +415,11 @@
       "default": "",
       "description": "kind version"
     },
+    "kluctl": {
+      "type": "string",
+      "default": "",
+      "description": "kluctl version"
+    },
     "kops": {
       "type": "string",
       "default": "",
@@ -609,6 +619,11 @@
       "type": "string",
       "default": "",
       "description": "nova version"
+    },
+    "nu": {
+      "type": "string",
+      "default": "",
+      "description": "nu version"
     },
     "oc": {
       "type": "string",

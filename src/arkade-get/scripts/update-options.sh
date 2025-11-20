@@ -1,19 +1,11 @@
-#!/bin/bash -x
+#!/bin/bash
 set -euo pipefail
 
 FEATURE_JSON="$(cd "$(dirname "$0")/.." && pwd)/devcontainer-feature.json"
 
 newoptions=$(mktemp)
 
-# # Install a specific version of arkade to list the available tools.
-# # The install script will install this same version.
-
-# : "${_ARKADE_TAG:?}"
-
-# arkade get arkade@"$_ARKADE_TAG" --progress=false >/dev/null 2>&1 || {
-#     echo "Failed to install arkade version $_ARKADE_TAG"
-#     exit 1
-# }
+# NOTE: The arkade version below should match the one specified in install.sh
 
 # Get the list of tools from arkade and build a new options object:
 # { "tool": {"type":"string","default":"","description":"tool version"}, ... }

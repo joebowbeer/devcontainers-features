@@ -40,48 +40,6 @@ jobs:
             echo "changed=false" >> $GITHUB_OUTPUT
           fi
 
-      # - name: Read current version
-      #   id: get_version
-      #   run: |
-      #     VERSION=$(jq -r '.version' devcontainer-feature.json)
-      #     echo "Current version: $VERSION"
-      #     echo "current_version=$VERSION" >> $GITHUB_OUTPUT
-
-      # - name: Bump version
-      #   id: bump_version
-      #   run: |
-      #     CURRENT_VERSION="${{ steps.get_version.outputs.current_version }}"
-      #     BUMP_TYPE="${{ github.event.inputs.bump_type }}"
-      #     IFS='.' read -r -a VERSION_PARTS <<< "$CURRENT_VERSION"
-
-      #     MAJOR=${VERSION_PARTS[0]}
-      #     MINOR=${VERSION_PARTS[1]}
-      #     PATCH=${VERSION_PARTS[2]}
-
-      #     case "$BUMP_TYPE" in
-      #       major)
-      #         MAJOR=$((MAJOR + 1))
-      #         MINOR=0
-      #         PATCH=0
-      #         ;;
-      #       minor)
-      #         MINOR=$((MINOR + 1))
-      #         PATCH=0
-      #         ;;
-      #       patch)
-      #         PATCH=$((PATCH + 1))
-      #         ;;
-      #       *)
-      #         echo "Invalid bump type: $BUMP_TYPE"
-      #         exit 1
-      #         ;;
-      #     esac
-
-      #     NEW_VERSION="$MAJOR.$MINOR.$PATCH"
-      #     echo "New version: $NEW_VERSION"
-      #     jq ".version = \"$NEW_VERSION\"" devcontainer-feature.json > devcontainer-feature.json.tmp && mv devcontainer-feature.json.tmp devcontainer-feature.json
-      #     echo "new_version=$NEW_VERSION" >> $GITHUB_OUTPUT
-
       - name: Bump arkade-get feature version if something changed
         if: steps.changes.outputs.changed == 'true'
         run: |
@@ -93,7 +51,7 @@ jobs:
           NEW_VERSION="$major.$minor.$((patch + 1))"
 
           # Update the JSON file
-          sed -i "s/version: $CURRENT_VERSION/version: $NEW_VERSION/" src/arkade-get/devcontainer-feature.json
+          sed -i 's/"version": "$CURRENT_VERSION"/"version": "$NEW_VERSION"/' src/arkade-get/devcontainer-feature.json
           echo "Bumped arkade-get feature version from $CURRENT_VERSION to $NEW_VERSION"
 
       - name: Create PR for update

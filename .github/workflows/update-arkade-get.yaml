@@ -1,0 +1,68 @@
+name: "Update arkade-get feature from latest arkade release"
+on:
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Get latest release tag of arkade
+        id: get_arkade_tag
+        run: |
+          arkade_tag=$(curl --silent "https://api.github.com/repos/alexellis/arkade/releases/latest" | jq -r .tag_name)
+          echo "Latest arkade tag: $arkade_tag"
+          echo "arkade_tag=$arkade_tag" >> $GITHUB_OUTPUT
+
+      - name: Update arkade-get install.sh with latest arkade tag
+        run: sed -i "s/_ARKADE_TAG=\".*\"/_ARKADE_TAG=\"${{ steps.get_arkade_tag.outputs.arkade_tag }}\"/" src/arkade-get/install.sh
+
+      - name: Update arkade-get options from latest release
+        run: src/arkade-get/scripts/update-options.sh
+        env:
+          _ARKADE_TAG: ${{ steps.get_arkade_tag.outputs.arkade_tag }}
+
+      - name: Check for changes in src/arkade-get/
+        id: changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Bump arkade-get feature version
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          current_version=$(grep 'version:' src/arkade-get/devcontainer-feature.json | awk -F': ' '{print $2}')
+          IFS='.' read -r -a version_parts <<< "$current_version"
+          patch_version=$((version_parts[2] + 1))
+          new_version="${version_parts[0]}.${version_parts[1]}.$patch_version"
+          sed -i "s/version: $current_version/version: $new_version/" src/arkade-get/devcontainer-feature.json
+          echo "Bumped arkade-get feature version from $current_version to $new_version"
+
+      - name: Create PR for update
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+          echo "Start."
+          # Configure git and Push updates
+          git config --global user.email github-actions[bot]@users.noreply.github.com
+          git config --global user.name github-actions[bot]
+          git config pull.rebase false
+          branch=automated-arkade-update-$GITHUB_RUN_ID
+          git checkout -b $branch
+          message='Automated arkade update'
+          # Add / update and commit
+          git add src/arkade-get/
+          git commit -m 'Automated arkade update' || export NO_UPDATES=true
+          # Push
+          if [ "$NO_UPDATES" != "true" ] ; then
+              git push origin "$branch"
+              gh pr create --title "$message" --body "$message"
+          fi

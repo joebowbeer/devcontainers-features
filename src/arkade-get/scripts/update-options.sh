@@ -8,7 +8,7 @@ newoptions=$(mktemp)
 # Install a specific version of arkade to list the available tools.
 # The install script will install this same version.
 
-_ARKADE_TAG="${_ARKADE_TAG:-"0.11.54"}"
+"${_ARKADE_TAG:?}"
 
 arkade get arkade@"$_ARKADE_TAG" --progress=false >/dev/null 2>&1 || {
     echo "Failed to install arkade version $_ARKADE_TAG"

@@ -22,7 +22,7 @@ echo "Activating feature 'arkade-get'"
 
 # Install the version of arkade that was used to generate the feature options
 
-_ARKADE_TAG="${_ARKADE_TAG:-"0.11.54"}"
+_ARKADE_TAG="0.11.54"
 
 curl -sSL "https://raw.githubusercontent.com/alexellis/arkade/refs/tags/$_ARKADE_TAG/get.sh" | sh
 

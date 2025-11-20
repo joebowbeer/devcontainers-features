@@ -21,7 +21,7 @@ jobs:
       - name: Update arkade-get install.sh with latest arkade tag
         run: sed -i "s/_ARKADE_TAG=\".*\"/_ARKADE_TAG=\"${{ steps.get_arkade_tag.outputs.arkade_tag }}\"/" src/arkade-get/install.sh
 
-      - uses: allexellis/arkade-get@master
+      - uses: alexellis/arkade-get@master
         with:
           arkade: ${{ steps.get_arkade_tag.outputs.arkade_tag }}
 

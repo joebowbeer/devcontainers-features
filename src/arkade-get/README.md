@@ -49,6 +49,7 @@ Installs arkade and then arkade installs the other specified CLIs.
 | docker-compose | docker-compose version | string | - |
 | doctl | doctl version | string | - |
 | dotenv-linter | dotenv-linter version | string | - |
+| dufs | dufs version | string | - |
 | duplik8s | duplik8s version | string | - |
 | eks-node-viewer | eks-node-viewer version | string | - |
 | eksctl | eksctl version | string | - |
@@ -96,6 +97,7 @@ Installs arkade and then arkade installs the other specified CLIs.
 | kgctl | kgctl version | string | - |
 | kim | kim version | string | - |
 | kind | kind version | string | - |
+| kluctl | kluctl version | string | - |
 | kops | kops version | string | - |
 | krew | krew version | string | - |
 | ktop | ktop version | string | - |
@@ -136,6 +138,7 @@ Installs arkade and then arkade installs the other specified CLIs.
 | nerdctl | nerdctl version | string | - |
 | node_exporter | node_exporter version | string | - |
 | nova | nova version | string | - |
+| nu | nu version | string | - |
 | oc | oc version | string | - |
 | oh-my-posh | oh-my-posh version | string | - |
 | op | op version | string | - |

@@ -175,6 +175,11 @@
       "default": "",
       "description": "dotenv-linter version"
     },
+    "dufs": {
+      "type": "string",
+      "default": "",
+      "description": "dufs version"
+    },
     "duplik8s": {
       "type": "string",
       "default": "",
@@ -410,6 +415,11 @@
       "default": "",
       "description": "kind version"
     },
+    "kluctl": {
+      "type": "string",
+      "default": "",
+      "description": "kluctl version"
+    },
     "kops": {
       "type": "string",
       "default": "",
@@ -609,6 +619,11 @@
       "type": "string",
       "default": "",
       "description": "nova version"
+    },
+    "nu": {
+      "type": "string",
+      "default": "",
+      "description": "nu version"
     },
     "oc": {
       "type": "string",

@@ -22,7 +22,7 @@ jobs:
         run: sed -i "s/_ARKADE_TAG=\".*\"/_ARKADE_TAG=\"${{ steps.get_arkade_tag.outputs.arkade_tag }}\"/" src/arkade-get/install.sh
 
       - name: Update arkade-get options from latest release
-        run: src/arkade-get/scripts/update-options.sh
+        run: bash src/arkade-get/scripts/update-options.sh
         env:
           _ARKADE_TAG: ${{ steps.get_arkade_tag.outputs.arkade_tag }}
 

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 set -euo pipefail
 
 FEATURE_JSON="$(cd "$(dirname "$0")/.." && pwd)/devcontainer-feature.json"

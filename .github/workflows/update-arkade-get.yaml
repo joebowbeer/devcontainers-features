@@ -1,4 +1,4 @@
-name: "Update arkade-get options from latest release"
+name: "Update arkade-get from latest release"
 on:
   workflow_dispatch:
 
@@ -28,8 +28,6 @@ jobs:
 
       - name: Update arkade-get options
         run: bash src/arkade-get/scripts/update-options.sh
-        env:
-          _ARKADE_TAG: ${{ steps.get_arkade_tag.outputs.arkade_tag }}
 
       - name: Check for changes
         id: changes
@@ -66,7 +64,7 @@ jobs:
           git config pull.rebase false
           branch=automated-arkade-get-update-$GITHUB_RUN_ID
           git checkout -b $branch
-          message="Automated arkade-get update"
+          message="Automated update arkade-get ${{ steps.get_arkade_tag.outputs.arkade_tag }}"
           # Add / update and commit
           git add src/arkade-get/
           git commit -m "$message" || export NO_UPDATES=true

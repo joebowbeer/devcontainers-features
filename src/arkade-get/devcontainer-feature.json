@@ -1,6 +1,6 @@
 {
   "id": "arkade-get",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "name": "arkade-get",
   "description": "Installs arkade and then arkade installs the other specified CLIs.",
   "documentationURL": "https://github.com/joebowbeer/devcontainers-features/tree/main/src/arkade-get",
@@ -150,6 +150,11 @@
       "default": "",
       "description": "devspace version"
     },
+    "direnv": {
+      "type": "string",
+      "default": "",
+      "description": "direnv version"
+    },
     "discord-updater": {
       "type": "string",
       "default": "",
@@ -184,6 +189,11 @@
       "type": "string",
       "default": "",
       "description": "duplik8s version"
+    },
+    "dyff": {
+      "type": "string",
+      "default": "",
+      "description": "dyff version"
     },
     "eks-node-viewer": {
       "type": "string",
@@ -485,6 +495,11 @@
       "default": "",
       "description": "kubectx version"
     },
+    "kubelogin": {
+      "type": "string",
+      "default": "",
+      "description": "kubelogin version"
+    },
     "kubens": {
       "type": "string",
       "default": "",
@@ -660,6 +675,11 @@
       "default": "",
       "description": "operator-sdk version"
     },
+    "opkssh": {
+      "type": "string",
+      "default": "",
+      "description": "opkssh version"
+    },
     "osm": {
       "type": "string",
       "default": "",
@@ -769,6 +789,11 @@
       "type": "string",
       "default": "",
       "description": "ssync version"
+    },
+    "starship": {
+      "type": "string",
+      "default": "",
+      "description": "starship version"
     },
     "stern": {
       "type": "string",

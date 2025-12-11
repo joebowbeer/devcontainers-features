@@ -44,6 +44,7 @@ Installs arkade and then arkade installs the other specified CLIs.
 | dagger | dagger version | string | - |
 | devpod | devpod version | string | - |
 | devspace | devspace version | string | - |
+| direnv | direnv version | string | - |
 | discord-updater | discord-updater version | string | - |
 | dive | dive version | string | - |
 | docker-compose | docker-compose version | string | - |
@@ -51,6 +52,7 @@ Installs arkade and then arkade installs the other specified CLIs.
 | dotenv-linter | dotenv-linter version | string | - |
 | dufs | dufs version | string | - |
 | duplik8s | duplik8s version | string | - |
+| dyff | dyff version | string | - |
 | eks-node-viewer | eks-node-viewer version | string | - |
 | eksctl | eksctl version | string | - |
 | eksctl-anywhere | eksctl-anywhere version | string | - |
@@ -111,6 +113,7 @@ Installs arkade and then arkade installs the other specified CLIs.
 | kubeconform | kubeconform version | string | - |
 | kubectl | kubectl version | string | - |
 | kubectx | kubectx version | string | - |
+| kubelogin | kubelogin version | string | - |
 | kubens | kubens version | string | - |
 | kubescape | kubescape version | string | - |
 | kubeseal | kubeseal version | string | - |
@@ -146,6 +149,7 @@ Installs arkade and then arkade installs the other specified CLIs.
 | opencode | opencode version | string | - |
 | openshift-install | openshift-install version | string | - |
 | operator-sdk | operator-sdk version | string | - |
+| opkssh | opkssh version | string | - |
 | osm | osm version | string | - |
 | pack | pack version | string | - |
 | packer | packer version | string | - |
@@ -168,6 +172,7 @@ Installs arkade and then arkade installs the other specified CLIs.
 | snowmachine | snowmachine version | string | - |
 | sops | sops version | string | - |
 | ssync | ssync version | string | - |
+| starship | starship version | string | - |
 | stern | stern version | string | - |
 | syft | syft version | string | - |
 | talosctl | talosctl version | string | - |

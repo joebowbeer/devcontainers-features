@@ -17,7 +17,10 @@ Installs arkade and then arkade installs the other specified CLIs.
 |-----|-----|-----|-----|
 | actions-usage | actions-usage version | string | - |
 | actuated-cli | actuated-cli version | string | - |
+| age | age version | string | - |
+| age-keygen | age-keygen version | string | - |
 | alloy | alloy version | string | - |
+| amp | amp version | string | - |
 | argocd | argocd version | string | - |
 | argocd-autopilot | argocd-autopilot version | string | - |
 | atuin | atuin version | string | - |
@@ -29,18 +32,22 @@ Installs arkade and then arkade installs the other specified CLIs.
 | ch-remote | ch-remote version | string | - |
 | cilium | cilium version | string | - |
 | civo | civo version | string | - |
+| claude | claude version | string | - |
 | cloud-hypervisor | cloud-hypervisor version | string | - |
 | clusterawsadm | clusterawsadm version | string | - |
 | clusterctl | clusterctl version | string | - |
 | cmctl | cmctl version | string | - |
+| codex | codex version | string | - |
 | conftest | conftest version | string | - |
 | consul | consul version | string | - |
 | copa | copa version | string | - |
+| copilot | copilot version | string | - |
 | cosign | cosign version | string | - |
 | cr | cr version | string | - |
 | crane | crane version | string | - |
 | croc | croc version | string | - |
 | crossplane | crossplane version | string | - |
+| crush | crush version | string | - |
 | dagger | dagger version | string | - |
 | devpod | devpod version | string | - |
 | devspace | devspace version | string | - |
@@ -195,6 +202,7 @@ Installs arkade and then arkade installs the other specified CLIs.
 | vhs | vhs version | string | - |
 | viddy | viddy version | string | - |
 | waypoint | waypoint version | string | - |
+| websocat | websocat version | string | - |
 | yq | yq version | string | - |
 | yt-dlp | yt-dlp version | string | - |
 

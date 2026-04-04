@@ -21,6 +21,7 @@ Installs arkade and then arkade installs the other specified CLIs.
 | age-keygen | age-keygen version | string | - |
 | alloy | alloy version | string | - |
 | amp | amp version | string | - |
+| argo | argo version | string | - |
 | argocd | argocd version | string | - |
 | argocd-autopilot | argocd-autopilot version | string | - |
 | atuin | atuin version | string | - |
@@ -66,6 +67,7 @@ Installs arkade and then arkade installs the other specified CLIs.
 | etcd | etcd version | string | - |
 | faas-cli | faas-cli version | string | - |
 | faasd | faasd version | string | - |
+| fd | fd version | string | - |
 | firectl | firectl version | string | - |
 | flux | flux version | string | - |
 | flyctl | flyctl version | string | - |
@@ -93,6 +95,7 @@ Installs arkade and then arkade installs the other specified CLIs.
 | inlets-pro | inlets-pro version | string | - |
 | inletsctl | inletsctl version | string | - |
 | istioctl | istioctl version | string | - |
+| jg | jg version | string | - |
 | jq | jq version | string | - |
 | just | just version | string | - |
 | k0s | k0s version | string | - |
@@ -180,6 +183,7 @@ Installs arkade and then arkade installs the other specified CLIs.
 | sops | sops version | string | - |
 | ssync | ssync version | string | - |
 | starship | starship version | string | - |
+| step | step version | string | - |
 | stern | stern version | string | - |
 | syft | syft version | string | - |
 | talosctl | talosctl version | string | - |

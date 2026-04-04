@@ -1,6 +1,6 @@
 {
   "id": "arkade-get",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "name": "arkade-get",
   "description": "Installs arkade and then arkade installs the other specified CLIs.",
   "documentationURL": "https://github.com/joebowbeer/devcontainers-features/tree/main/src/arkade-get",
@@ -34,6 +34,11 @@
       "type": "string",
       "default": "",
       "description": "amp version"
+    },
+    "argo": {
+      "type": "string",
+      "default": "",
+      "description": "argo version"
     },
     "argocd": {
       "type": "string",
@@ -260,6 +265,11 @@
       "default": "",
       "description": "faasd version"
     },
+    "fd": {
+      "type": "string",
+      "default": "",
+      "description": "fd version"
+    },
     "firectl": {
       "type": "string",
       "default": "",
@@ -394,6 +404,11 @@
       "type": "string",
       "default": "",
       "description": "istioctl version"
+    },
+    "jg": {
+      "type": "string",
+      "default": "",
+      "description": "jg version"
     },
     "jq": {
       "type": "string",
@@ -829,6 +844,11 @@
       "type": "string",
       "default": "",
       "description": "starship version"
+    },
+    "step": {
+      "type": "string",
+      "default": "",
+      "description": "step version"
     },
     "stern": {
       "type": "string",
